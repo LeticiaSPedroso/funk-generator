@@ -33,7 +33,7 @@ export default {
   background-color: #B18DF9;
   border: 1px solid transparent;
   border-radius: 40px;
-  font-family: Roboto;
+  font-family: 'Open Sans';
   font-size: 1.2rem;
   font-weight: 700;
   text-transform: uppercase;
