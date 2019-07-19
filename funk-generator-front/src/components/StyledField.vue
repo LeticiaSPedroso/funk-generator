@@ -18,7 +18,7 @@
       :placeholder="placeholder"
       :type="type"
       class="field-input"
-      @keyup="$emit('changed', value)"
+      @blur="$emit('changed', value)"
     >
     <span
       v-if="isRequired"
@@ -40,7 +40,7 @@ export default {
     isRequired: { type: Boolean, default: false },
   },
   data: () => ({
-    value: null,
+    value: 'Coelhinho fofinho',
   }),
 };
 </script>
@@ -56,7 +56,8 @@ export default {
   }
   &-input {
     font-family: 'Open Sans', sans-serif;
-    border: 1px solid #c2c3c6;
+    font-size: 0.9rem;
+    border: none;
     padding: 10px;
     width: 100%;
     border-radius: 8px;

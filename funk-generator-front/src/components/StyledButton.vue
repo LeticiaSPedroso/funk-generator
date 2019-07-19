@@ -42,6 +42,10 @@ export default {
   cursor: pointer;
   transition: all 170ms ease-in-out;
   z-index: 999;
+
+  &:focus {
+    outline: none;
+  }
   &:hover {
     color: white;
     background-color: #061554;

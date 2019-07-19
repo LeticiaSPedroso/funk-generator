@@ -23,7 +23,7 @@ module.exports = async function (context, req) {
   const Funks = MongoClient.collection('funks');
 
   try {
-    const funk = await Funks.insert({ name, author, letter });
+    const funk = await Funks.insert({ name, author, letter, createdAt: new Date() });
     closeConnectionFn();
     context.res = { status: 201, body: funk.ops[0] };
   } catch (error) {

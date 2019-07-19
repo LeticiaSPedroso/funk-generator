@@ -3,7 +3,7 @@ const {
   speechSynthesis: synth,
 } = window;
 
-export const speak = ({ text, voiceType }) => {
+export const speak = ({ text, voiceType, options }) => {
   const voices = synth.getVoices();
   const VOICE_TYPES = {
     m: voices[0],
@@ -12,11 +12,10 @@ export const speak = ({ text, voiceType }) => {
   const instance = new SpeechSynthesisUtterance(text);
   instance.lang = VOICE_TYPES[voiceType].lang;
   instance.voice = VOICE_TYPES[voiceType];
-  instance.rate = 1;
-  instance.pitch = 1;
+  instance.rate = options.rate;
+  instance.pitch = options.pitch;
   instance.volume = 1;
   synth.speak(instance);
-  console.log('Speak instance', instance);
   return { instance, synth };
 };
 
